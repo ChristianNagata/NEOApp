@@ -11,7 +11,8 @@ class Neo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Home()
+      home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

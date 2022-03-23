@@ -3,7 +3,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:neo/post_model.dart';
+import 'package:neo/httpService/post_model.dart';
 
 class HttpService {
   final String postUrl = 'https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=hKuFyqogFT5y2egU9TjUUdWrEd7PPc7vKmOB5PrY';

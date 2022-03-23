@@ -1,11 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:neo/http_service.dart';
-import 'package:neo/neows/api.dart';
+import 'package:neo/httpService/http_service.dart';
 import 'package:neo/screens/neo_detail.dart';
 
-import '../post_model.dart';
+import '../httpService/post_model.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -49,7 +46,7 @@ class _HomeState extends State<Home> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(obj.name),
-                                    Icon(Icons.arrow_forward_ios, size: 12)
+                                    const Icon(Icons.arrow_forward_ios, size: 12)
                                   ],
                                 ),
                                 subtitle: Text(
@@ -67,7 +64,7 @@ class _HomeState extends State<Home> {
                             .toList(),
                       );
                     }
-                    return Container(
+                    return SizedBox(
                       height: 360,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,

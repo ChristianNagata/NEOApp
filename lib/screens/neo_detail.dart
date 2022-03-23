@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:neo/post_model.dart';
+import 'package:neo/httpService/post_model.dart';
 
 class NeoDetail extends StatelessWidget {
   final NearEarthObject neo;
-  NeoDetail({required this.neo});
+  const NeoDetail({Key? key, required this.neo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
