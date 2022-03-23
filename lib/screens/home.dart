@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
-            expandedHeight: 100,
+            expandedHeight: 80,
             elevation: 0,
             centerTitle: true,
             title: Text('Near-Earth Objects'),
@@ -44,16 +44,38 @@ class _HomeState extends State<Home> {
                         children: objs!
                             .map(
                               (NearEarthObject obj) => ListTile(
-                                title: Text(obj.name),
-                                onTap: () => Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) => NeoDetail(neo: obj,),)
+                                title: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(obj.name),
+                                    Icon(Icons.arrow_forward_ios, size: 12)
+                                  ],
                                 ),
+                                subtitle: Text(
+                                    obj.isPotentiallyHazardousAsteroid
+                                        ? 'Potentially hazardous'
+                                        : "Isn't hazardous"),
+                                onTap: () => Navigator.of(context)
+                                    .push(MaterialPageRoute(
+                                  builder: (context) => NeoDetail(
+                                    neo: obj,
+                                  ),
+                                )),
                               ),
                             )
                             .toList(),
                       );
                     }
-                    return CircularProgressIndicator();
+                    return Container(
+                      height: 360,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                          CircularProgressIndicator(),
+                        ],
+                      ),
+                    );
                   },
                 ),
               ],

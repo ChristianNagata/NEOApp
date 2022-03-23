@@ -11,7 +11,8 @@ class NeoDetail extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(neo.name),
-        toolbarHeight: 100,
+        toolbarHeight: 80,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
